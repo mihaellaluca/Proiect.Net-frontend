@@ -1,0 +1,34 @@
+<div class="login-page">
+  <div class="login">
+    <h1>Login to your account</h1>
+  </div>
+  <hr />
+
+  <div class="container">
+    <form action="" class="form" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="email">Your email:</label>
+        <input type="text" name="email" [(ngModel)]="email" required email />
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input
+          type="password"
+          name="password"
+          [(ngModel)]="password"
+          required
+        />
+      </div>
+      <button type="submit" value="Submit" class="btn btn-primary">Login</button>
+      <!-- <p *ngIf="!check">Try again</p> -->
+      <!-- <a routerLink='/register'>Register now</a> -->
+    </form>
+    <p class="forgotPassword">
+      Forgot your password?
+    </p>
+    <hr />
+    <p class="noAccount" routerLink="/register">
+      No account? Register!
+    </p>
+  </div>
+</div>
