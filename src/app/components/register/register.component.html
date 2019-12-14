@@ -1,12 +1,72 @@
-<form action="" class="form" (ngSubmit)="onSubmit()">
-    <label>Nume<input type="text" name="nume" [(ngModel)]="nume"></label>
-    <label>Prenume<input type="text" name="prenume" [(ngModel)]="prenume"></label>
-    <label>Email<input type="text" name="email" [(ngModel)]="email"></label>
-    <label>Password<input type="password" name="password" [(ngModel)]="password"></label>
-    <div>
-    <app-tech-item *ngFor="let techItemRecieved of tech" [techItemRecieved]='techItemRecieved' (manageTech)="manageTech($event)"></app-tech-item>
-    </div>
-    <p *ngIf="!isValid">Try again</p>
-    <input type="submit" value="Submit" class="btn">
-  
+<form
+  class="register-form"
+  [formGroup]="registerForm"
+  (ngSubmit)="onSubmit()"
+>
+  <div class="form-group">
+    <label for="firstName">First name: </label>
+    <input
+      type="text"
+      name="firstName"
+      formControlName="firstName"
+      class="form-control"
+      required
+    />
+  </div>
+  <div class="form-group">
+    <label for="lastName">Last name: </label>
+    <input
+      type="text"
+      name="lastName"
+      formControlName="lastName"
+      class="form-control"
+      required
+    />
+  </div>
+  <div class="form-group">
+    <label for="username">Username</label>
+    <input
+      type="text"
+      name="username"
+      formControlName="username"
+      class="form-control"
+      required
+    />
+  </div>
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input
+      type="text"
+      name="email"
+      formControlName="email"
+      class="form-control"
+      required
+      email
+    />
+  </div>
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input
+      type="password"
+      name="password"
+      formControlName="password"
+      class="form-control"
+      required
+    />
+  </div>
+  <div>
+    <app-tech-item
+      *ngFor="let techItemRecieved of tech"
+      [techItemRecieved]="techItemRecieved"
+      (manageTech)="manageTech($event)"
+    ></app-tech-item>
+  </div>
+  <p *ngIf="!isValid">Try again</p>
+  <button
+    type="submit"
+    value="Submit"
+    class="btn btn-primary"
+  >
+    Submit
+  </button>
 </form>

@@ -5,21 +5,33 @@
   <hr />
 
   <div class="container">
-    <form action="" class="form" (ngSubmit)="onSubmit()">
+    <form class="form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
       <div class="form-group">
         <label for="email">Your email:</label>
-        <input type="text" name="email" [(ngModel)]="email" required email />
+        <input
+          type="text"
+          name="email"
+          formControlName="email"
+          required
+          email
+        />
       </div>
       <div class="form-group">
         <label for="password">Password:</label>
         <input
           type="password"
           name="password"
-          [(ngModel)]="password"
+          formControlName="password"
           required
         />
       </div>
-      <button type="submit" value="Submit" class="btn btn-primary">Login</button>
+      <button
+        type="submit"
+        value="Submit"
+        class="btn btn-primary"
+      >
+        Login
+      </button>
       <!-- <p *ngIf="!check">Try again</p> -->
       <!-- <a routerLink='/register'>Register now</a> -->
     </form>
