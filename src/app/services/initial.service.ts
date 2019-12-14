@@ -9,17 +9,12 @@ import { GlobalService } from './global-service.service';
 	providedIn: 'root'
 })
 export class InitialService {
-	httpOptions = {
-		headers: new HttpHeaders({
-			'Content-Type': 'application/json'
-		})
-	};
-
 	constructor(private httpClient: HttpClient, private globalService: GlobalService) {}
 
 	registerUser(user: UserModel) {
+		let headers = new HttpHeaders().set('Content-Type', 'application/json');
 		console.log('USER: ', user);
-		return this.httpClient.post(`${this.globalService.apiURL}/users`, user, this.httpOptions);
+		return this.httpClient.post(`${this.globalService.apiURL}/users`, user, { headers, responseType: 'text' });
 	}
 	loginUser(user: UserModel) {
 		// localStorage.setItem("jwt", "uniqueId");

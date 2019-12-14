@@ -13,7 +13,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 export class RegisterComponent implements OnInit {
 	tech: string[];
 	isValid: boolean = true;
-	techKnown: string[] = [];
+	KnownTechnologies: string[] = [];
 	registerForm: FormGroup;
 
 	constructor(
@@ -33,14 +33,14 @@ export class RegisterComponent implements OnInit {
 			username: [ '', Validators.required ],
 			email: [ '', Validators.required ],
 			password: [ '', Validators.required ],
-			techKnown: [ this.techKnown ]
+			KnownTechnologies: [ this.KnownTechnologies ]
 		});
 		console.log('Form:::: ', this.registerForm);
 	}
 
 	manageTech(item: TechItemModel) {
-		if (item.isChecked) this.techKnown.push(item.techItem);
-		else this.techKnown = this.techKnown.filter((t) => t !== item.techItem);
+		if (item.isChecked) this.KnownTechnologies.push(item.techItem);
+		else this.KnownTechnologies = this.KnownTechnologies.filter((t) => t !== item.techItem);
 	}
 
 	onSubmit() {
