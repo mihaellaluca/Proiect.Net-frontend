@@ -1,11 +1,10 @@
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+	providedIn: 'root'
 })
 export class GlobalService {
+	constructor() {}
 
-  constructor() { }
-
-  apiURL: string = 'http://localhost:5001/v1';
+	apiURL: string = 'https://localhost:5001/v1';
 }
