@@ -1,0 +1,15 @@
+<div class="container">
+    <div class='info-container'>
+        <p class='projectName'>{{projectRecieved.projectName}} <span class="author">-{{projectRecieved.ownerName}}</span></p>
+        <div class="projectDescription">{{projectRecieved.description}}</div>
+        <div class="bottom-container">
+            <a href="" class="seeMore">see more>></a>
+            <div class="tech-container" >
+                <div class='tech' *ngFor="let tech of projectRecieved.techVector">{{tech}}</div>
+             </div>
+        </div>
+    </div>
+    <button class="btn joinBtn">Join now</button>
+    
+</div>
+<hr>

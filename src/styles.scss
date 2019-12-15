@@ -1,10 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 body {
-    font-family: sans-serif;
+	font-family: sans-serif;
 }
 
 .bg-img-sign {
-    background-image: url('../src/assets/ballpen-blur-close-up-461077-1-1920x1280.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
+	background-image: url('../src/assets/ballpen-blur-close-up-461077-1-1920x1280.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.bg-img-home {
+	background-image: url('../src/assets/background.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
 }

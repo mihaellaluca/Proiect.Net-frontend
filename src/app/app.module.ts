@@ -13,9 +13,10 @@ import { RegisterComponent } from './components/register/register.component';
 import { TechItemComponent } from './components/tech-item/tech-item.component';
 import { MihneaComponent } from './components/mihnea/mihnea.component';
 import { HeaderComponent } from './components/header/header.component';
+import { ProjectTabComponent } from './components/project-tab/project-tab.component';
 
 @NgModule({
-	declarations: [ AppComponent, LoginComponent, HomeComponent, RegisterComponent, TechItemComponent, MihneaComponent, HeaderComponent ],
+	declarations: [ AppComponent, LoginComponent, HomeComponent, RegisterComponent, TechItemComponent, MihneaComponent, HeaderComponent, ProjectTabComponent ],
 	imports: [ BrowserModule, AppRoutingModule, FormsModule, NgbModule, HttpClientModule,ReactiveFormsModule ],
 	providers: [],
 	bootstrap: [ AppComponent ]

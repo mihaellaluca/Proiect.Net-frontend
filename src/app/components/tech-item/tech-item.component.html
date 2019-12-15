@@ -1,4 +1,9 @@
 <div>
-  <input (change)="onToggle()" type="checkbox" id="{{ techItemRecieved }}" />
-  <label> {{ techItemRecieved }} </label>
-</div>
+
+    <input 
+    (change)='onToggle()'
+    type="checkbox"
+    name="{{techItemRecieved}}"
+    id="{{techItemRecieved}}"
+    ><label for="{{techItemRecieved}}" >{{techItemRecieved}} </label>
+ </div>
