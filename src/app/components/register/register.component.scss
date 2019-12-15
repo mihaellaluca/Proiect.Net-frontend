@@ -1,0 +1,64 @@
+@import "./../../../assets/colors.scss";
+
+.register {
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2em;
+  color: $darkBlue;
+}
+hr {
+  width: 13em;
+  border: 1px solid $darkBlue;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5em;
+  width: fit-content;
+  padding: 3em 5em;
+  border-radius: 12px;
+  background-color: rgba(255, 255, 255, 0.829);
+}
+
+.two-cols {
+  display: flex;
+  flex-direction: row;
+  .first-col {
+    margin-right: 5rem;
+  }
+}
+
+label,
+p {
+  color: $darkBlue;
+  font-weight: bold;
+  font-size: large;
+}
+input {
+  height: calc(1em + 1rem + 2px);
+}
+
+.third-col {
+  margin-left: auto;
+  margin-right: auto;
+  width: 5rem;
+}
+
+button {
+  background-color: $darkBlue;
+}
+
+.already-have {
+  display: flex;
+  flex-direction: column;
+  p {
+    font-size: small;
+    margin-left: auto;
+    margin-right: auto;
+    text-decoration: underline;
+  }
+}
