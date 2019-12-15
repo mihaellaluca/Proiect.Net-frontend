@@ -1,1 +1,23 @@
-<p>home works!</p>
+
+<div id="container">
+    <div id="head-container"><hr id="left"><p>Available Projects</p><hr id="right">
+    </div>
+    <a href="">+Create your own project</a>
+    <div id="components-container">
+        <div id="searchComp"class='col-md-10'>
+            <input class="form-control" type="text" class='searchProject'[(ngModel)]="searchText" placeholder="Search Projects"
+            (input)="applyFilters()">
+            <div class="checkFields col-md-10">
+                <app-tech-item
+        *ngFor="let techItemRecieved of tech"
+        [techItemRecieved]="techItemRecieved"
+        (manageTech)="manageTech($event)"
+                ></app-tech-item>
+            </div>
+    </div>
+        <div id="projectContainer"><app-project-tab *ngFor="let projectRecieved of projectsFiltered"
+            [projectRecieved]="projectRecieved">
+        </app-project-tab></div>
+    </div>
+</div>
+
