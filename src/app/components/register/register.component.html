@@ -1,72 +1,91 @@
-<form
-  class="register-form"
-  [formGroup]="registerForm"
-  (ngSubmit)="onSubmit()"
->
-  <div class="form-group">
-    <label for="firstName">First name: </label>
-    <input
-      type="text"
-      name="firstName"
-      formControlName="firstName"
-      class="form-control"
-      required
-    />
+<div class="register-page">
+  <div class="register">
+    <h1>Create your account</h1>
   </div>
-  <div class="form-group">
-    <label for="lastName">Last name: </label>
-    <input
-      type="text"
-      name="lastName"
-      formControlName="lastName"
-      class="form-control"
-      required
-    />
+  <hr />
+
+  <div class="container">
+    <form
+      class="register-form"
+      [formGroup]="registerForm"
+      (ngSubmit)="onSubmit()"
+    >
+      <div class="two-cols">
+        <div class="first-col">
+          <div class="form-group">
+            <label for="firstName">First name: </label>
+            <input
+              type="text"
+              name="firstName"
+              formControlName="firstName"
+              class="form-control"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="lastName">Last name: </label>
+            <input
+              type="text"
+              name="lastName"
+              formControlName="lastName"
+              class="form-control"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="username">Username:</label>
+            <input
+              type="text"
+              name="username"
+              formControlName="username"
+              class="form-control"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input
+              type="text"
+              name="email"
+              formControlName="email"
+              class="form-control"
+              required
+              email
+            />
+          </div>
+          <div class="form-group">
+            <label for="password">Password:</label>
+            <input
+              type="password"
+              name="password"
+              formControlName="password"
+              class="form-control"
+              required
+            />
+          </div>
+        </div>
+        <div class="second-col">
+          <p class="known-tech">Known technologies:</p>
+          <app-tech-item
+            *ngFor="let techItemRecieved of tech"
+            [techItemRecieved]="techItemRecieved"
+            (manageTech)="manageTech($event)"
+          ></app-tech-item>
+        </div>
+      </div>
+      <div class="third-col">
+        <p *ngIf="!isValid">Try again</p>
+        <button type="submit" value="Submit" class="btn btn-primary">
+          Register
+        </button>
+      </div>
+    </form>
+    <div class="already-have">
+      <hr />
+      <p routerLink="/login">
+        Already have an account? Sign in here!
+      </p>
+    </div>
+
   </div>
-  <div class="form-group">
-    <label for="username">Username</label>
-    <input
-      type="text"
-      name="username"
-      formControlName="username"
-      class="form-control"
-      required
-    />
-  </div>
-  <div class="form-group">
-    <label for="email">Email</label>
-    <input
-      type="text"
-      name="email"
-      formControlName="email"
-      class="form-control"
-      required
-      email
-    />
-  </div>
-  <div class="form-group">
-    <label for="password">Password</label>
-    <input
-      type="password"
-      name="password"
-      formControlName="password"
-      class="form-control"
-      required
-    />
-  </div>
-  <div>
-    <app-tech-item
-      *ngFor="let techItemRecieved of tech"
-      [techItemRecieved]="techItemRecieved"
-      (manageTech)="manageTech($event)"
-    ></app-tech-item>
-  </div>
-  <p *ngIf="!isValid">Try again</p>
-  <button
-    type="submit"
-    value="Submit"
-    class="btn btn-primary"
-  >
-    Submit
-  </button>
-</form>
+</div>
