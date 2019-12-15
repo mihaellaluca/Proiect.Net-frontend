@@ -1,29 +1,14 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { GlobalService } from './global-service.service';
 
 @Injectable({
 	providedIn: 'root'
 })
 export class TehnologiiService {
-	tehnologii: string[] = [
-		'.net',
-		'c#',
-		'unity',
-		'Java',
-		'Javascript',
-		'node.js',
-		'angular',
-		'react',
-		'vue',
-		'express',
-		'swift',
-		'mongoDb',
-		'c++',
-		'python',
-		'c'
-	];
-	constructor() {}
+	constructor(private http: HttpClient, private globalService: GlobalService) {}
 	getTehnologies() {
-		//GET request to server
-		return this.tehnologii;
+		let tech = this.http.get(`${this.globalService.apiURL}/users/data=technologies`);
+		return tech;
 	}
 }

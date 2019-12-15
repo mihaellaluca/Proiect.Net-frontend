@@ -26,7 +26,16 @@ export class RegisterComponent implements OnInit {
 	ngOnInit() {
 		document.body.classList.add('bg-img-sign');
 
-		this.tech = this.techFromServer.getTehnologies();
+		this.techFromServer.getTehnologies().pipe().subscribe(
+			(data) => {
+				//console.log('Data::', data);
+
+				this.tech = Object.keys(data).map((i) => data[i]).map((x) => x.name);
+			},
+			(error) => {
+				console.error(error.error);
+			}
+		);
 		this.registerForm = this.formBuilder.group({
 			firstName: [ '', Validators.required ],
 			lastName: [ '', Validators.required ],
@@ -35,7 +44,7 @@ export class RegisterComponent implements OnInit {
 			password: [ '', Validators.required ],
 			KnownTechnologies: [ this.KnownTechnologies ]
 		});
-		console.log('Form:::: ', this.registerForm);
+		//	console.log('Form:::: ', this.registerForm);
 	}
 
 	manageTech(item: TechItemModel) {
