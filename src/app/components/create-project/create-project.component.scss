@@ -1,0 +1,58 @@
+@import "../../../assets/colors.scss";
+div#container{
+    position:absolute;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)),url('../../../assets/background.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+div#secondContainer{
+    position: absolute;
+    margin-left: 20%;
+    margin-right: 20%;
+    width: 60%;
+    margin-top: 3%;
+    h4{
+        color: $darkBlue;
+    }
+    p#createManage{
+        font-size: 1.2em;
+        padding-bottom: 2em;
+        border-bottom: 2px $buttonBlue solid;
+    }
+}
+form label,#neededTech{
+    color: rgb(7, 97, 146);
+    font-size: 1.3em;
+
+}
+div#labels{
+    display:inline;
+}
+form p{
+    color: rgb(90, 86, 86);
+}
+form{
+    display: flex;
+    flex-direction: column;
+}
+input#submit{
+    margin-right: 40%;
+    margin-left: 40%;
+    width: 20%;
+    height: 2em;
+    background-color: $buttonBlue;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 0.4em;
+}
+#projectDescription{
+    height: 10em;
+}
