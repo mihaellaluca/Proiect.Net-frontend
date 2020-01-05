@@ -12,6 +12,7 @@ export class LoginComponent implements OnInit {
 	constructor(private initial: InitialService, private router: Router, private formBuilder: FormBuilder) {}
 
 	ngOnInit() {
+		document.body.classList.remove('bg-img-home');
 		document.body.classList.add('bg-img-sign');
 
 		this.loginForm = this.formBuilder.group({
