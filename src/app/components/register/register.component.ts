@@ -24,6 +24,7 @@ export class RegisterComponent implements OnInit {
 	) {}
 
 	ngOnInit() {
+		document.body.classList.remove('bg-img-home');
 		document.body.classList.add('bg-img-sign');
 
 		this.techFromServer.getTehnologies().pipe().subscribe(

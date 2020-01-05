@@ -1,0 +1,70 @@
+@import "../../../assets/colors.scss";
+
+div#secondContainer {
+	margin-left: auto;
+	margin-right: auto;
+	width: 80%;
+	margin-top: 3%;
+	margin-bottom: 2rem;
+	h4 {
+		color: $darkBlue;
+	}
+	p#createManage {
+		font-size: 1.2em;
+		padding-bottom: 2em;
+		border-bottom: 2px $buttonBlue solid;
+	}
+}
+form label,
+#neededTech {
+	color: rgb(7, 97, 146);
+	font-size: 1.3em;
+}
+
+div#labels {
+	display: inline;
+}
+form p {
+	color: rgb(90, 86, 86);
+}
+.form-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+.first-row {
+	flex-basis: 50%;
+}
+.second-row {
+	flex-basis: 50%;
+}
+.tech {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+
+	app-tech-item {
+		flex-basis: 25%;
+		margin-top: 0.3rem;
+	}
+}
+#submit {
+	margin-left: 40%;
+	margin-right: 40%;
+	width: 20%;
+	height: 2em;
+	background-color: $buttonBlue;
+	border: none;
+	color: white;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	cursor: pointer;
+	border-radius: 0.4em;
+}
+#projectDescription {
+	height: 12em;
+	resize: none;
+	width: 100%;
+	overflow-y: scroll;
+}

@@ -2,7 +2,7 @@
 <div id="container">
     <div id="head-container"><hr id="left"><p>Available Projects</p><hr id="right">
     </div>
-    <a href="">+Create your own project</a>
+    <a [routerLink]="['/create-project']" routerLinkActive="router-link-active" >+Create your own project</a>
     <div id="components-container">
         <div id="searchComp"class='col-md-10'>
             <input class="form-control" type="text" class='searchProject'[(ngModel)]="searchText" placeholder="Search Projects"

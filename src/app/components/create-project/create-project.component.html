@@ -1,0 +1,55 @@
+<div id="container">
+    <div id="secondContainer">
+        <div id="description">
+            <h4>Create your project</h4>
+            <p id="createManage">Create and manage your own project ! Set up the plan now, then gather your team in order to build 
+                a succesful application with your collaborators</p>
+        </div>
+        <div id="form">
+            <form [formGroup]="createProjectForm"
+            (ngSubmit)="onSubmit()">
+                <div class="form-container">
+                    <div class="firs-row">
+                        <div class="form-group">
+                            <label for="projectName">Project name</label>
+                            <p>Great projects have short and memorable names</p>
+                            <input type="text" id="projectName" name="projectName" placeholder="Project name.."
+                            formControlName="projectName"
+                            class="form-control"
+                            required>
+                        </div>
+                        <div class="form-group">
+                            <label for="projectDescription">Description</label>
+                            <p>Tell the others the main infos to convince them to join you</p>
+                            <textarea id="projectDescription" name="projectDescription" placeholder="Project description.."
+                            formControlName="projectDescription"
+                            class="form-control"
+                            required></textarea>
+                        </div>
+                    </div>
+                    <div class="second-row">
+                        <div class="form-group">
+                            <label for="nonTechnicalRequirements">Non-technical requirements</label>
+                            <p>e.g:hindi required</p>
+                            <input type="text" id="nonTechnicalRequirements" name="nonTechnicalRequirements"
+                            formControlName="projectNonTechnicalRequirements"
+                            class="form-control"
+                            required>
+                        </div>
+                        <div class="form-group">
+                            <p id="neededTech">Needed technologies:</p>
+                            <div class="tech">
+                                <app-tech-item
+                                *ngFor="let techItemRecieved of tech"
+                                [techItemRecieved]="techItemRecieved"
+                                (manageTech)="manageTech($event)"
+                                        ></app-tech-item>
+                            </div>
+                        </div>
+                    </div>
+                </div>  
+                <button id="submit" type="submit" value="Publish">Publish</button>
+            </form>
+        </div>
+    </div>
+</div>
