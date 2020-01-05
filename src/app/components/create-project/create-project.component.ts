@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { TehnologiiService } from 'src/app/services/tehnologii.service';
 import { TechItemModel } from 'src/app/models/TechItemModel';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { CreateProjectService } from 'src/app/services/create-project.service';
 
 @Component({
 	selector: 'app-create-project',
@@ -12,7 +13,11 @@ export class CreateProjectComponent implements OnInit {
 	createProjectForm: FormGroup;
 	tech: string[];
 	KnownTechnologies: string[] = [];
-	constructor(private techService: TehnologiiService, private formBuilder: FormBuilder) {}
+	constructor(
+		private techService: TehnologiiService,
+		private formBuilder: FormBuilder,
+		private projectService: CreateProjectService
+	) {}
 
 	ngOnInit() {
 		document.body.classList.add('bg-img-home');
@@ -27,10 +32,12 @@ export class CreateProjectComponent implements OnInit {
 			}
 		);
 		this.createProjectForm = this.formBuilder.group({
-			projectName: [ '', Validators.required ],
-			projectDescription: [ '', Validators.required ],
-			projectNonTechnicalRequirements: [ '', Validators.required ],
-			KnownTechnologies: [ this.KnownTechnologies ]
+			Name: [ '', Validators.required ],
+			OwnerId: localStorage.getItem('userId'),
+			Description: [ '', Validators.required ],
+			//projectNonTechnicalRequirements: [ '', Validators.required ],
+			Technologies: [ this.KnownTechnologies ],
+			State: 'new'
 		});
 	}
 	manageTech(item: TechItemModel) {
@@ -39,5 +46,14 @@ export class CreateProjectComponent implements OnInit {
 	}
 	onSubmit() {
 		console.log(this.createProjectForm.value);
+		this.projectService.postProject(this.createProjectForm.value).pipe().subscribe(
+			(data) => {
+				console.log(data);
+				console.log('succes');
+			},
+			(error) => {
+				console.error(error);
+			}
+		);
 	}
 }
