@@ -3,6 +3,7 @@ import { ProjectTabService } from 'src/app/services/project-tab.service';
 import { ProjectTabModel } from 'src/app/models/ProjectTabModel';
 import { TechItemModel } from 'src/app/models/TechItemModel';
 import { TehnologiiService } from 'src/app/services/tehnologii.service';
+import { Project } from 'src/app/models/CreateProjectModel';
 
 @Component({
 	selector: 'app-home',
@@ -10,8 +11,8 @@ import { TehnologiiService } from 'src/app/services/tehnologii.service';
 	styleUrls: [ './home.component.scss' ]
 })
 export class HomeComponent implements OnInit {
-	projects: ProjectTabModel[];
-	projectsFiltered: ProjectTabModel[];
+	projects: Project[];
+	projectsFiltered: Project[];
 	tech: string[];
 	KnownTechnologies: string[] = [];
 	searchText: string = '';
@@ -21,6 +22,7 @@ export class HomeComponent implements OnInit {
 		document.body.classList.remove('bg-img-sign');
 		document.body.classList.add('bg-img-home');
 		this.projects = this.projectTabService.getProjects();
+
 		this.techService.getTehnologies().pipe().subscribe(
 			(data) => {
 				//console.log('Data::', data);
@@ -43,13 +45,13 @@ export class HomeComponent implements OnInit {
 		this.projectsFiltered = this.projects;
 		this.projectsFiltered = this.projectsFiltered.filter(
 			(project) =>
-				project.projectName.toLowerCase().includes(this.searchText.toLowerCase().trim()) ||
+				project.name.toLowerCase().includes(this.searchText.toLowerCase().trim()) ||
 				project.ownerName.toLowerCase().includes(this.searchText.toLowerCase().trim())
 		);
 		this.projectsFiltered = this.projectsFiltered.filter((projectTab) => {
 			let ok = 1;
 			this.KnownTechnologies.forEach((e) => {
-				if (projectTab.techVector.includes(e) === false) ok = 0;
+				if (projectTab.technologies.includes(e) === false) ok = 0;
 			}, ok);
 			if (ok === 1) return true;
 			else return false;

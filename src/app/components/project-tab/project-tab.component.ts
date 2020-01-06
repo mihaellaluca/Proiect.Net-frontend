@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ProjectTabModel } from 'src/app/models/ProjectTabModel';
+import { Project } from 'src/app/models/CreateProjectModel';
 
 @Component({
 	selector: 'app-project-tab',
@@ -7,7 +8,7 @@ import { ProjectTabModel } from 'src/app/models/ProjectTabModel';
 	styleUrls: [ './project-tab.component.scss' ]
 })
 export class ProjectTabComponent implements OnInit {
-	@Input() projectRecieved: ProjectTabModel;
+	@Input() projectRecieved: Project;
 	constructor() {}
 
 	ngOnInit() {}
