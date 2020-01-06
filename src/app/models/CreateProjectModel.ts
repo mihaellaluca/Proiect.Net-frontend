@@ -1,7 +1,8 @@
 export class Project {
-	Name: string;
-	OwnerId: string;
-	Description: string;
-	Technologies: string[];
-	State: string;
+	name: string;
+	ownerId: string;
+	ownerName: string;
+	description: string;
+	technologies: string[];
+	state: string;
 }
