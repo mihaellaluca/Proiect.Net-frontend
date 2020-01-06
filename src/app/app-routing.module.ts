@@ -5,6 +5,8 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { AuthGuardService } from './services/auth/auth-guard.service';
 import { CreateProjectComponent } from './components/create-project/create-project.component';
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
+
 
 const routes: Routes = [
 	{
@@ -14,7 +16,8 @@ const routes: Routes = [
 	},
 	{ path: 'login', component: LoginComponent },
 	{ path: 'register', component: RegisterComponent },
-	{ path: 'create-project', component: CreateProjectComponent}
+	{ path: 'create-project', component: CreateProjectComponent},
+	{ path: 'user-profile', component: UserProfileComponent}
 ];
 
 @NgModule({

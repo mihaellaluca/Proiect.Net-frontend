@@ -14,9 +14,10 @@ import { TechItemComponent } from './components/tech-item/tech-item.component';
 import { MihneaComponent } from './components/mihnea/mihnea.component';
 import { HeaderComponent } from './components/header/header.component';
 import { CreateProjectComponent } from './components/create-project/create-project.component';
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
 
 @NgModule({
-	declarations: [ AppComponent, LoginComponent, HomeComponent, RegisterComponent, TechItemComponent, MihneaComponent, HeaderComponent, CreateProjectComponent ],
+	declarations: [ AppComponent, LoginComponent, HomeComponent, RegisterComponent, TechItemComponent, MihneaComponent, HeaderComponent, CreateProjectComponent, UserProfileComponent ],
 	imports: [ BrowserModule, AppRoutingModule, FormsModule, NgbModule, HttpClientModule,ReactiveFormsModule ],
 	providers: [],
 	bootstrap: [ AppComponent ]
