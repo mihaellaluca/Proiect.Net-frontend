@@ -21,6 +21,7 @@ export class HomeComponent implements OnInit {
 	ngOnInit() {
 		document.body.classList.remove('bg-img-sign');
 		document.body.classList.add('bg-img-home');
+		this.projects = [];
 		this.projects = this.projectTabService.getProjects();
 
 		this.techService.getTehnologies().pipe().subscribe(
