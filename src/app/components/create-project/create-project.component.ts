@@ -3,6 +3,7 @@ import { TehnologiiService } from 'src/app/services/tehnologii.service';
 import { TechItemModel } from 'src/app/models/TechItemModel';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { CreateProjectService } from 'src/app/services/create-project.service';
+import { Router } from '@angular/router';
 
 @Component({
 	selector: 'app-create-project',
@@ -16,7 +17,8 @@ export class CreateProjectComponent implements OnInit {
 	constructor(
 		private techService: TehnologiiService,
 		private formBuilder: FormBuilder,
-		private projectService: CreateProjectService
+		private projectService: CreateProjectService,
+		private router: Router
 	) {}
 
 	ngOnInit() {
@@ -55,5 +57,6 @@ export class CreateProjectComponent implements OnInit {
 				console.error(error);
 			}
 		);
+		this.router.navigate([ '' ]);
 	}
 }
