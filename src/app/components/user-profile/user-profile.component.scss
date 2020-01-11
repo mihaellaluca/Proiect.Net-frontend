@@ -1,0 +1,68 @@
+@import "../../../assets/colors.scss";
+div#container{
+    position:absolute;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)),url('../../../assets/background.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+div#userLeft{
+    position:absolute;
+    width : 20vw;
+    height: 100%; 
+    padding : 2vw;
+    img{
+        width: 15vw;
+        height: 10vw;
+        border : 6px solid rgba(0, 180, 251, 0.185);
+    }
+    p#userName{
+        font-weight: bold;
+
+    }
+    p{
+        text-align:center;
+        margin-top: 2vh;
+        color: $darkBlue;
+    }
+    button{
+        display: block;
+        text-align: center;
+        background-color : rgba(54, 144, 192, 0.76);
+        padding: 0.4vw 0.8vw;
+        margin: auto;
+        border: none;
+        border-radius: 5px;
+        
+       p{
+        color: $darkBlue;
+        font-weight: bold;
+        margin: 0;
+       }
+    }
+}
+div#userRight{
+    position: absolute;
+    margin-left: 30vw;
+    margin-right: 20vw;
+    width : 50vw;
+    height: 100%;
+
+}
+div#userProfile,div#userKnownTechnologies,div#userContributions,div#userReviews{
+    margin-top: 2vh;
+    border-bottom: 2px $buttonBlue solid;
+    p:first-child{
+        font-weight: bold;
+        color: $darkBlue;
+    }
+}
+div#userContributions{
+    p:nth-child(2),p:nth-child(4){
+        font-weight: bold;
+        color: $darkBlue;
+    }
+}
