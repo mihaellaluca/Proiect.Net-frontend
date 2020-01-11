@@ -9,7 +9,7 @@ import { Project } from '../models/CreateProjectModel';
 export class CreateProjectService {
 	constructor(private http: HttpClient, private globalService: GlobalService) {}
 	postProject(project: Project) {
-		let resp = this.http.post(`${this.globalService.apiURLP}/projects`, project);
+		let resp = this.http.post(`${this.globalService.apiURL}/projects`, project);
 		return resp;
 	}
 }
