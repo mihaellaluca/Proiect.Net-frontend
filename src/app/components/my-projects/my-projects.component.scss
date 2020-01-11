@@ -1,0 +1,198 @@
+@import './../../../assets/colors.scss';
+div#container{
+    position:absolute;
+    background-repeat: no-repeat;
+    width: 100%;
+   
+    background-image: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)),url('../../../assets/background.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+div#secondContainer{
+    margin-left: 5vw;
+    margin-right: 5vw;
+}
+h5 {
+overflow: hidden;
+text-align: center;
+margin-top: 4vh;
+color: rgb(32, 117, 163);
+}
+
+h5:before,
+h5:after {
+background-color: rgb(32, 117, 163);
+content: "";
+display: inline-block;
+height: 1px;
+position: relative;
+vertical-align: middle;
+width: 50%;
+}
+
+h5:before {
+right: 0.5em;
+margin-left: -50%;
+}
+
+h5:after {
+left: 0.5em;
+margin-right: -50%;
+}
+div#myOwnProjects{
+    position:absolute;
+    width: 45vw;
+
+}
+div#myOwnProjects{
+    position:absolute;
+    margin-left: 10vw;
+    width: 22.5vw;
+    margin-top: 2vh;
+    p{
+        color: rgb(32, 117, 163);
+        font-weight: 500;
+    }
+}
+div#myContributions{
+    position:absolute;
+    margin-left: 55vw;
+    width: 45vw;
+    margin-top: 2vh;
+    p{
+        color: rgb(32, 117, 163);
+        font-weight: 500;
+    }
+}
+p#createProject:hover{
+    cursor: pointer;
+}
+#pendingsHeader{
+    margin-top: 200px;
+}
+#cards{
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    
+}
+#card{
+    margin: 2vh 2vw 2vh 2vw;
+    width: 18vw;
+    height: 20vw;
+    background-color: rgb(255, 255, 255);
+    -webkit-box-shadow: -3px 8px 12px -5px rgba(0,0,0,0.75);
+    -moz-box-shadow: -3px 8px 12px -5px rgba(0,0,0,0.75);
+    box-shadow: -3px 8px 12px -5px rgba(0,0,0,0.75);
+    p{
+        font-size: 1vw;
+        margin: 5px;
+    }
+    #imgDescription{
+        margin-bottom: 20px;
+        font-weight: 500;
+    }
+    #projectTitle{
+        font-weight: 700;
+        margin-left: 0px;
+        margin-right: 60%;
+    }
+    img{
+        margin-top: -20px;
+        border-radius: 50%;
+        width: 25%;
+        height: 25%;
+    }
+    #seeMore{
+        text-decoration: underline;
+        
+    }
+    .btn{
+       
+
+        padding: 0px;
+        width: 6em;
+        height: 1.7em;
+        cursor: pointer;
+        color: white;
+        border-radius: 6px;
+        margin: 0px 10px;
+        color: black;
+        text-align: center;
+        line-height: 100%;
+      }
+
+      .btn--success{
+          background-color: rgba(38, 194, 103, 0.842);
+          border-color: rgba(38, 194, 103, 0.842);
+      }
+      .btn--danger{
+          background-color: rgba(207, 66, 47, 0.835);
+          border-color: rgba(207, 66, 47, 0.835);
+      }
+      .btn--outline{
+          background-color: white;
+      }
+
+      .btn--outline.btn--success{
+          color:rgb(15, 182, 84);
+          border-color:rgb(15, 182, 84);
+      }
+      .btn--outline.btn--danger{
+          color:rgba(207, 66, 47, 0.835);
+          border-color:rgba(207, 66, 47, 0.835);
+      }
+      .btn--outline.btn--blue:hover{
+          color:white;
+          background-color:rgb(66, 161, 216);
+      }
+      .btn--outline.btn--success:hover{
+          color:white;
+          background-color:rgb(15, 182, 84);
+      }
+      .btn--outline.btn--danger:hover{
+          color:white;
+          background-color:rgba(207, 66, 47, 0.835);
+      }
+      .btn--loading{
+          position: relative;
+        }
+        
+      .btn--loading:after{
+          content: '';
+          position: absolute;
+          width: 0; height: 2px;
+          display: block;
+          margin-top: 5px;
+          left: 0;
+          background: rgb(255, 255, 255);
+          animation: moving 1s infinite alternate;
+        }
+        .btn--loading.btn--outline.btn--danger:after{
+      
+          background: rgba(207, 66, 47, 0.835);
+      
+      }
+      .btn--loading.btn--outline.btn--success:after{
+      
+          background: rgb(15, 182, 84);
+      
+      }
+      .btn--loading.btn--outline.btn--blue:after{
+      
+          background: rgb(66, 161, 216);
+      
+      }
+      @keyframes moving {
+          0% {
+          width: 0%;
+          }
+      
+          100%
+          {
+            width: 100%;
+            
+          }}
+      
+}
