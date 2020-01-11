@@ -66,11 +66,13 @@
         </div>
         <div class="second-col">
           <p class="known-tech">Known technologies:</p>
+          <div class="tech-list">
           <app-tech-item
             *ngFor="let techItemRecieved of tech"
             [techItemRecieved]="techItemRecieved"
             (manageTech)="manageTech($event)"
           ></app-tech-item>
+          </div>
         </div>
       </div>
       <div class="third-col">

@@ -10,7 +10,7 @@
 
 hr {
   width: 15em;
-  border: 1px solid $darkBlue;
+  border: .5px solid $darkBlue;
   margin-left: auto;
   margin-right: auto;
   margin-top: 0;
@@ -42,7 +42,6 @@ label, p {
 .forgotPassword, .noAccount {
     font-size: small;
     margin-left: 3em;
-    text-decoration: underline;
     cursor: pointer;
 }
 

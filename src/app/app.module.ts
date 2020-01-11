@@ -15,10 +15,14 @@ import { MihneaComponent } from './components/mihnea/mihnea.component';
 import { HeaderComponent } from './components/header/header.component';
 import { ProjectTabComponent } from './components/project-tab/project-tab.component';
 import { CreateProjectComponent } from './components/create-project/create-project.component';
-import { UserProfileComponent } from './components/user-profile/user-profile.component';
 
+import { UsersSuggestionsComponent } from './components/users-suggestions/users-suggestions.component';
+import { ProjectPageComponent } from './components/project-page/project-page.component';
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
 @NgModule({
-	declarations: [ AppComponent, LoginComponent, HomeComponent, RegisterComponent, TechItemComponent, MihneaComponent, HeaderComponent, ProjectTabComponent, CreateProjectComponent, UserProfileComponent,UserProfileComponent ],
+	declarations: [ AppComponent, LoginComponent, HomeComponent, RegisterComponent, TechItemComponent, MihneaComponent, HeaderComponent, ProjectTabComponent, CreateProjectComponent, UsersSuggestionsComponent, ProjectPageComponent,UserProfileComponent ],
+
 	imports: [ BrowserModule, AppRoutingModule, FormsModule, NgbModule, HttpClientModule,ReactiveFormsModule ],
 	providers: [],
 	bootstrap: [ AppComponent ]
