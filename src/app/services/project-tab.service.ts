@@ -38,6 +38,6 @@ export class ProjectTabService {
 
 	// get project by id
 	getProjectById(projectId) {
-		return this.http.get(`${this.globalService.apiURLP}/projects`, projectId);
+		return this.http.get(`${this.globalService.apiURL}/projects`, projectId);
 	}
 }

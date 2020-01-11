@@ -1,26 +1,21 @@
 <div class="container">
   <div>
-    <h4 class="project-name">Electric Project</h4>
-    <p>Owner: Buraga Cornelius</p>
+    <h4 class="project-name">{{ project.name }}</h4>
+    <p>Owner: {{ project.ownerName }}</p>
     <p>
-      Sa se creeze un mash-up Web menit sa gestioneze in timp-real a fluxurile
-      de activitati dintr-un lant de furnizori de energie, baterii si
-      acumulatori speciali pentru drone, biciclete si autoturisme electrice.
-      This is a very beautiful description and a very beautiful description and
-      a very beautiful description.
+      {{ project.description }}
     </p>
-    <button class="btn btn-primary" (click)="joinProject()">
+    <button class="btn btn-primary" (click)="joinProject()" *ngIf="!userIsOwner">
       Join now
     </button>
   </div>
   <hr />
   <div>
     <h5 class="needed-tech">Needed technologies:</h5>
-    <div class="tech">
-      <!-- <app-tech-item
-        *ngFor="let techItemRecieved of neededTech"
-        [techItem]="TechItem"
-      ></app-tech-item> -->
+    <div class="tech-container">
+      <div class="tech" *ngFor="let tech of project.technologies">
+        {{ tech }}
+      </div>
     </div>
     <h5 class="requirements">Requirements:</h5>
     <p>No other requirements.</p>
@@ -28,8 +23,7 @@
   <hr />
   <div>
     <h5 class="collaborators">Collaborators:</h5>
-    <p>Julio Ricardo</p>
-    <p>Ramirez</p>
+    <p *ngFor="let collab of collaborators">{{collab}}</p>
     <br />
     <h5>Need more collaborators?</h5>
     <h5>Search through our recommendations:</h5>
