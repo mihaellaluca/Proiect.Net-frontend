@@ -13,7 +13,7 @@ export class ProjectTabService {
 	//GET pt proiecte
 	getProjects() {
 		this.projects = [];
-		this.http.get(`${this.globalService.apiURLP}/projects`).pipe().subscribe(
+		this.http.get(`${this.globalService.apiURL}/projects`).pipe().subscribe(
 			(data) => {
 				Object.keys(data).map((i) => data[i]).forEach((element) => {
 					this.http.get(`${this.globalService.apiURL}/users/${element.ownerId}`).pipe().subscribe(
