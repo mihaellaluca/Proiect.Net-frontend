@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { HttpClientModule } from '@angular/common/http'; 
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,11 +19,24 @@ import { CreateProjectComponent } from './components/create-project/create-proje
 import { UsersSuggestionsComponent } from './components/users-suggestions/users-suggestions.component';
 import { ProjectPageComponent } from './components/project-page/project-page.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
-import { UserProfileComponent } from './components/user-profile/user-profile.component';
-@NgModule({
-	declarations: [ AppComponent, LoginComponent, HomeComponent, RegisterComponent, TechItemComponent, MihneaComponent, HeaderComponent, ProjectTabComponent, CreateProjectComponent, UsersSuggestionsComponent, ProjectPageComponent,UserProfileComponent ],
 
-	imports: [ BrowserModule, AppRoutingModule, FormsModule, NgbModule, HttpClientModule,ReactiveFormsModule ],
+@NgModule({
+	declarations: [
+		AppComponent,
+		LoginComponent,
+		HomeComponent,
+		RegisterComponent,
+		TechItemComponent,
+		MihneaComponent,
+		HeaderComponent,
+		ProjectTabComponent,
+		CreateProjectComponent,
+		UsersSuggestionsComponent,
+		ProjectPageComponent,
+		UserProfileComponent
+	],
+
+	imports: [ BrowserModule, AppRoutingModule, FormsModule, NgbModule, HttpClientModule, ReactiveFormsModule ],
 	providers: [],
 	bootstrap: [ AppComponent ]
 })
