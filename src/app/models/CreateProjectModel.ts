@@ -8,6 +8,7 @@ export class Project {
 	state: string;
 
 	constructor() {
+		this.projectId = null;
 		this.name = null;
 		this.ownerId = null;
 		this.ownerName = null;

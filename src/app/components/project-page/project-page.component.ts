@@ -56,6 +56,7 @@ export class ProjectPageComponent implements OnInit {
           }
           console.log("Colaboratori: ", this.collaborators);
             this.project = {
+              projectId: data[0].id,
               name: data[0].name,
               ownerId: data[0].ownerId,
               ownerName: ownerNameReq,
