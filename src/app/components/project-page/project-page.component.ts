@@ -22,6 +22,7 @@ export class ProjectPageComponent implements OnInit {
 	userIsOwner: boolean = false;
 	collaborators: string[] = [];
 	suggestedUsers: UserModel[];
+  userIsCollaborator: boolean = false;
 
 	constructor(
 		private projectService: ProjectTabService,
@@ -74,22 +75,25 @@ export class ProjectPageComponent implements OnInit {
 
 				this.neededTech = this.project.technologies;
 
-				this.userService.getSuggestedUsers(this.neededTech).pipe().subscribe(
-					(data) => {
-						console.log('Suggested users: ', data);
-					},
-					(error) => {
-						console.log(error);
-					}
-				);
-
-				this.checkUserIsOwner();
-			},
-			(error) => {
-				console.log(error);
-			}
-		);
-	}
+          this.userService
+            .getSuggestedUsers(this.neededTech)
+            .pipe()
+            .subscribe(
+              data => {
+                console.log("Suggested users: ", data);
+              },
+              error => {
+                console.log(error);
+              }
+            );
+          this.checkUserIsCollaborator();
+          this.checkUserIsOwner();
+        },
+        error => {
+          console.log(error);
+        }
+      );
+  }
 
 	joinProject() {
 		// add current user to project
@@ -102,21 +106,34 @@ export class ProjectPageComponent implements OnInit {
 
 		console.log(invitation);
 
-		this.invitationService.joinProject(invitation).pipe().subscribe(
-			(data) => {
-				console.log('After: ', data);
-			},
-			(error) => {
-				console.log(error);
-			}
-		);
-	}
+    this.invitationService
+      .joinProject(invitation)
+      .pipe()
+      .subscribe(
+        data => {
+          console.log("After: ", data);
+          window.alert("Your request is in pending! Please wait for the owner to accept it.");
+        },
+        error => {
+          console.log(error);
+        }
+      );
 
-	checkUserIsOwner() {
-		if (this.userId === this.project.ownerId) {
-			this.userIsOwner = true;
-		} else {
-			this.userIsOwner = false;
-		}
-	}
+    
+  }
+
+  checkUserIsOwner() {
+    if (this.userId === this.project.ownerId) {
+      this.userIsOwner = true;
+    } else {
+      this.userIsOwner = false;
+    }
+  }
+  checkUserIsCollaborator() {
+    if (this.userId in this.collaborators) {
+      this.userIsCollaborator = true;
+    } else {
+      this.userIsCollaborator = false;
+    }
+  }
 }

@@ -5,7 +5,7 @@
     <p>
       {{ project.description }}
     </p>
-    <button class="btn btn-primary" (click)="joinProject()" *ngIf="!userIsOwner">
+    <button class="btn btn-primary" (click)="joinProject()" *ngIf="!userIsOwner || !userIsCollaborator">
       Join now
     </button>
   </div>
