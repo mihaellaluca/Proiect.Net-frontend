@@ -3,7 +3,7 @@
     
         <img src='../../../assets/profilepic.jpg'>
         <div id="userDescription">
-        <p id="userName">Julio Ricardo Montoya de la Rosa Ramirez</p>
+        <p id="userName">{{user.FirstName +' '+ user.LastName}}</p>
         <p id="accountType">Premium</p>
         <p id="gender">Gender</p>
         <p id="cityCountry">City,Country</p>
@@ -25,12 +25,8 @@
         <div id="userKnownTechnologies">
                 <p>Known technologies:</p>
                 <ul>
-                    <li>.Net</li>
-                    <li>.Net</li>
-                    <li>.Net</li>
-                    <li>.Net</li>
-                    <li>.Net</li>
-                    <li>.Net</li>
+                    <li *ngFor="let item of user.Technologies">{{item}}</li>
+                 
                 </ul>
             </div>
     

@@ -1,6 +1,6 @@
 <div class="container">
     <div class='info-container'>
-        <p class='projectName'>{{projectRecieved.name}} <span class="author">-{{projectRecieved.ownerName}}</span></p>
+        <p class='projectName'>{{projectRecieved.name}} <span class="author"><a [routerLink]="['/user-profile', projectRecieved.ownerId]">-{{projectRecieved.ownerName}}</a></span></p>
         <div class="projectDescription">{{projectRecieved.description}}</div>
         <div class="bottom-container">
             <a href="" class="seeMore">see more>></a>
