@@ -16,9 +16,10 @@ import { HeaderComponent } from './components/header/header.component';
 import { ProjectTabComponent } from './components/project-tab/project-tab.component';
 import { CreateProjectComponent } from './components/create-project/create-project.component';
 import { MyProjectsComponent } from './components/my-projects/my-projects.component';
+import { InvitationCardComponent } from './components/invitation-card/invitation-card.component';
 
 @NgModule({
-	declarations: [ AppComponent, LoginComponent, HomeComponent, RegisterComponent, TechItemComponent, MihneaComponent, HeaderComponent, ProjectTabComponent, CreateProjectComponent, MyProjectsComponent ],
+	declarations: [ AppComponent, LoginComponent, HomeComponent, RegisterComponent, TechItemComponent, MihneaComponent, HeaderComponent, ProjectTabComponent, CreateProjectComponent, MyProjectsComponent, InvitationCardComponent ],
 	imports: [ BrowserModule, AppRoutingModule, FormsModule, NgbModule, HttpClientModule,ReactiveFormsModule ],
 	providers: [],
 	bootstrap: [ AppComponent ]
