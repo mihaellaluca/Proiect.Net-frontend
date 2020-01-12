@@ -4,7 +4,7 @@
     <ul>
       <li routerLink='' *ngIf="isLogged">Home</li>
       <li [routerLink]="['/user-profile', userId]" *ngIf="isLogged">My Profile</li>
-      <li [routerLink]="['']" *ngIf="isLogged">My Projects</li>
+      <li [routerLink]="['/my-projects']" *ngIf="isLogged">My Projects</li>
       <li routerLink='/login' *ngIf="!isLogged">Sign In</li>
       <li routerLink='/register' *ngIf="!isLogged">Register</li>
       <li (click)='Logout()' *ngIf="isLogged">Logout</li>

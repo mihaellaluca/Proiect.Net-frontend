@@ -1,10 +1,11 @@
 <div id="card">
 
-        <p id="projectTitle">Trains</p>
+        <p id="projectTitle">{{card.projectName}}
+        </p>
         <img src='../../../assets/profilepic.jpg'>
-        <p id="imgDescription">Anna Karenina</p>
-        <p id="knownTehnologies">Known tehnologies : <br/>Javascript,Javascript,Javascript</p>
-        <a id="seeMore" href=''>See more</a>
+        <p id="imgDescription">{{name}}</p>
+        <p id="knownTehnologies">Known tehnologies : <br/>{{technologies}}</p>
+        <a id="seeMore" [routerLink]="['/user-profile',card.collaboratorId]" routerLinkActive="router-link-active" >See more</a>
         <p>or</p>
         <button class="btn btn--danger" id="reject" value="hello">Reject</button>
         <button class="btn btn--success" id="accept">Accept</button>
