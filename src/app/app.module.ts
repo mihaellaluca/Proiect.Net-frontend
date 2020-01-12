@@ -15,6 +15,8 @@ import { MihneaComponent } from './components/mihnea/mihnea.component';
 import { HeaderComponent } from './components/header/header.component';
 import { ProjectTabComponent } from './components/project-tab/project-tab.component';
 import { CreateProjectComponent } from './components/create-project/create-project.component';
+import { MyProjectsComponent } from './components/my-projects/my-projects.component';
+import { InvitationCardComponent } from './components/invitation-card/invitation-card.component';
 
 import { UsersSuggestionsComponent } from './components/users-suggestions/users-suggestions.component';
 import { ProjectPageComponent } from './components/project-page/project-page.component';
@@ -33,9 +35,10 @@ import { UserProfileComponent } from './components/user-profile/user-profile.com
 		CreateProjectComponent,
 		UsersSuggestionsComponent,
 		ProjectPageComponent,
-		UserProfileComponent
+		UserProfileComponent,
+    MyProjectsComponent,
+    InvitationCardComponent 
 	],
-
 	imports: [ BrowserModule, AppRoutingModule, FormsModule, NgbModule, HttpClientModule, ReactiveFormsModule ],
 	providers: [],
 	bootstrap: [ AppComponent ]

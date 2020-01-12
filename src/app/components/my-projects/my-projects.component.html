@@ -1,0 +1,35 @@
+<div id="container">
+    <div id="secondContainer">
+<div id="myProjects">
+        <h5>My projects</h5>
+
+    <div id="myOwnProjects">
+        <p>My own projects:</p>
+        <ul>
+            <li *ngFor="let project of myProjects">
+                {{ project }}
+              </li>
+        </ul>
+       <p id="createProject" routerLink='/create-project'>+ Create your own project</p>
+    </div>
+    <div id="myContributions">
+         <p>My contributions:</p>
+         <ul>
+            <li *ngFor="let project of myContributions">
+                {{ project }}
+              </li>
+         </ul>
+    </div>
+</div>
+<div id="pendings">
+    <h5 id="pendingsHeader">Pendings</h5>
+    <div id="cards">
+
+
+        <app-invitation-card *ngFor="let card of cardInfos" [card]="card"></app-invitation-card>
+
+
+    </div>
+</div>
+</div>
+</div>
