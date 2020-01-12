@@ -12,7 +12,7 @@ export class ProjectTabService {
 	projects: Project[] = [];
 
 	constructor(private http: HttpClient, private globalService: GlobalService) {}
-	// get all projects 
+	// get all projects
 	getProjects() {
 		this.projects = [];
 		this.http.get(`${this.globalService.apiURL}/projects`).pipe().subscribe(
@@ -38,6 +38,6 @@ export class ProjectTabService {
 
 	// get project by id
 	getProjectById(projectId) {
-		return this.http.get(`${this.globalService.apiURL}/projects`, projectId);
+		return this.http.get(`${this.globalService.apiURL}/projects/${projectId}`);
 	}
 }

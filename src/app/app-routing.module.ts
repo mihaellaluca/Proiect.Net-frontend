@@ -17,9 +17,8 @@ const routes: Routes = [
 	{ path: 'login', component: LoginComponent },
 	{ path: 'register', component: RegisterComponent },
 	{ path: 'create-project', component: CreateProjectComponent },
-	{ path: 'project-page', component: ProjectPageComponent},
-	{ path: 'user-profile/:id', component: UserProfileComponent}
-
+	{ path: 'project-page/:id', component: ProjectPageComponent },
+	{ path: 'user-profile/:id', component: UserProfileComponent }
 ];
 
 @NgModule({
