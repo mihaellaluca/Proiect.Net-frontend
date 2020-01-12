@@ -18,7 +18,7 @@ const routes: Routes = [
 	{ path: 'register', component: RegisterComponent },
 	{ path: 'create-project', component: CreateProjectComponent },
 	{ path: 'project-page', component: ProjectPageComponent},
-	{ path: 'user-profile', component: UserProfileComponent}
+	{ path: 'user-profile/:id', component: UserProfileComponent}
 
 ];
 
