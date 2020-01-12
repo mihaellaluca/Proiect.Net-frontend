@@ -8,12 +8,14 @@ import { Project } from '../models/CreateProjectModel';
 	providedIn: 'root'
 })
 export class ProjectTabService {
+	project: Project;
 	projects: Project[] = [];
+
 	constructor(private http: HttpClient, private globalService: GlobalService) {}
-	//GET pt proiecte
+	// get all projects
 	getProjects() {
 		this.projects = [];
-		this.http.get(`${this.globalService.apiURLP}/projects`).pipe().subscribe(
+		this.http.get(`${this.globalService.apiURL}/projects`).pipe().subscribe(
 			(data) => {
 				Object.keys(data).map((i) => data[i]).forEach((element) => {
 					this.http.get(`${this.globalService.apiURL}/users/${element.ownerId}`).pipe().subscribe(
@@ -32,5 +34,10 @@ export class ProjectTabService {
 			}
 		);
 		return this.projects;
+	}
+
+	// get project by id
+	getProjectById(projectId) {
+		return this.http.get(`${this.globalService.apiURL}/projects/${projectId}`);
 	}
 }

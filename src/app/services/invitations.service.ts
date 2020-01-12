@@ -1,15 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { GlobalService } from './global-service.service';
-import { Project } from '../models/CreateProjectModel';
+import { InvitationModel } from '../models/InvitationModel';
 
 @Injectable({
 	providedIn: 'root'
 })
-export class CreateProjectService {
+export class InvitationsService {
 	constructor(private http: HttpClient, private globalService: GlobalService) {}
-	postProject(project: Project) {
-		let resp = this.http.post(`${this.globalService.apiURL}/projects`, project);
+	joinProject(invitationModel: InvitationModel) {
+		let resp = this.http.post(`${this.globalService.apiURL}/projects/invitations`, invitationModel);
 		return resp;
 	}
 }
