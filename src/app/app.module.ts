@@ -21,6 +21,7 @@ import { InvitationCardComponent } from './components/invitation-card/invitation
 import { UsersSuggestionsComponent } from './components/users-suggestions/users-suggestions.component';
 import { ProjectPageComponent } from './components/project-page/project-page.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
+import { UserInvitationCardComponent } from './components/user-invitation-card/user-invitation-card.component';
 
 @NgModule({
 	declarations: [
@@ -37,7 +38,8 @@ import { UserProfileComponent } from './components/user-profile/user-profile.com
 		ProjectPageComponent,
 		UserProfileComponent,
     MyProjectsComponent,
-    InvitationCardComponent 
+    InvitationCardComponent,
+    UserInvitationCardComponent 
 	],
 	imports: [ BrowserModule, AppRoutingModule, FormsModule, NgbModule, HttpClientModule, ReactiveFormsModule ],
 	providers: [],

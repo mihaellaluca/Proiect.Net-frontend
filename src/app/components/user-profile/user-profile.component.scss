@@ -66,3 +66,9 @@ div#userContributions{
         color: $darkBlue;
     }
 }
+#cards{
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    
+}

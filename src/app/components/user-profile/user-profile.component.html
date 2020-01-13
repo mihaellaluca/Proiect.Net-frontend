@@ -4,12 +4,12 @@
         <img src='../../../assets/profilepic.jpg'>
         <div id="userDescription">
         <p id="userName">{{user.FirstName +' '+ user.LastName}}</p>
-        <p id="accountType">Premium</p>
-        <p id="gender">Gender</p>
-        <p id="cityCountry">City,Country</p>
+       
+        
+        <p id="cityCountry">{{user.Email}}</p>
         </div>
     
-        <button id="editProfile"><p># Edit profile</p></button>
+        
     </div>
     <div id ="userRight">
     
@@ -34,20 +34,20 @@
                     <p>Contributions on platform:</p>
                     <p>Current projects</p>
                     <p id="currentProjects">
-                        Currently not working on any project on this platform
+                       <li *ngFor="let item of projects">{{item}}</li>
                     </p>
-                    <p>Past projects</p>
-                    <p id="pastProjects"></p>
-                        <ul>
-                            <li>Electrik Project</li>
-                            <li>FII STUDENT</li>
-                        </ul>
+                   
              </div>
     
              
         <div id="userReviews">
-                <p>My Reviews:</p>
-                <p>No reviews yet.</p>
+            <div id="cards" *ngIf="currentUser==loggedUser">
+
+
+                <app-user-invitation-card *ngFor="let card of cardInfos" [card]="card"></app-user-invitation-card>
+        
+        
+            </div>
          </div>
     
     </div>

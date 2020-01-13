@@ -13,4 +13,12 @@ export class InvitationsService {
 		let resp = this.http.post(`${this.globalService.apiURL}/projects/invitations`, invitationModel, { headers });
 		return resp;
 	}
+	getUserInvitations() {
+		let headers = this.globalService.headers;
+		let resp = this.http.get(
+			`${this.globalService.apiURL}/projects/invitations/${localStorage.getItem('userId')}`,
+			{ headers }
+		);
+		return resp;
+	}
 }
