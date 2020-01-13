@@ -1,5 +1,59 @@
-.container {
+@import '../../../assets/colors.scss';
+
+#cards{
     display: flex;
     flex-wrap: wrap;
+    text-align: center;
     
+}
+#card{
+    padding: 25px;
+    margin: 2vh 2vw 2vh 2vw;
+    width: 18vw;
+    height: 20vw;
+    background-color: rgb(255, 255, 255);
+    -webkit-box-shadow: -3px 8px 12px -5px rgba(0,0,0,0.75);
+    -moz-box-shadow: -3px 8px 12px -5px rgba(0,0,0,0.75);
+    box-shadow: -3px 8px 12px -5px rgba(0,0,0,0.75);
+    p{
+        font-size: 1vw;
+        margin: 5px;
+    }
+    #imgDescription{
+        margin-bottom: 20px;
+        font-weight: 500;
+    }
+    #projectTitle{
+        font-weight: 700;
+        margin-left: 0px;
+        margin-right: 60%;
+    }
+    img{
+        margin-top: -20px;
+        border-radius: 50%;
+        width: 25%;
+        height: 25%;
+    }
+    #seeMore{
+        text-decoration: underline;
+        
+    }
+    .btn{
+        padding: 0px;
+        width: 6em;
+        height: 1.7em;
+        cursor: pointer;
+        color: white;
+        border-radius: 6px;
+        margin: 0px 10px;
+        color: black;
+        text-align: center;
+        line-height: 100%;
+        background-color: $transparentLightBlue;
+      }
+
+
+
+      
+      
 }

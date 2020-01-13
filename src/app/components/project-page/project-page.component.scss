@@ -20,7 +20,12 @@
     width: 6rem;
   }
 }
-
+#cards{
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  
+}
 
 button {
   background-color: $buttonBlue;

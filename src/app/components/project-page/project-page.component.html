@@ -27,6 +27,8 @@
     <br />
     <h5>Need more collaborators?</h5>
     <h5>Search through our recommendations:</h5>
-    <app-users-suggestions></app-users-suggestions>
+    <div id="cards">
+      <app-users-suggestions *ngFor="let card of cardInfos" [card]="card"></app-users-suggestions>
+  </div>
   </div>
 </div>
