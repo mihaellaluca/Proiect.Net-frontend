@@ -19,10 +19,8 @@ export class UsersSuggestionsComponent implements OnInit {
   constructor(private userService: UserService, private globalService: GlobalService,private invitationService: InvitationsService, private router: Router) { }
 
   ngOnInit() {
-    console.log("THIS.CARD:",this.card);
 		this.userService.getUserById(this.card.userId).pipe().subscribe(
 			(data) => {
-				console.log(data);
 				this.name = data['firstName'] + ' ' + data['lastName'];
 				data['knownTechnologies'].forEach((element) => {
 					this.technologies = this.technologies + ' ' + element;
@@ -42,10 +40,8 @@ export class UsersSuggestionsComponent implements OnInit {
 			localStorage.getItem('userId'), //ownerId
 			this.globalService.InvitationOwnerToUser
 		);
-    console.log(invite);
     this.invitationService.joinProject(invite).pipe().subscribe(
       data => {
-        console.log("Data after inviting: ", data);
         window.alert("Your invitation has been send succesfully.");
       },
       error => {

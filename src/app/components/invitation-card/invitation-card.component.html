@@ -7,7 +7,7 @@
         <p id="knownTehnologies">Known tehnologies : <br/>{{technologies}}</p>
         <a id="seeMore" [routerLink]="['/user-profile',card.collaboratorId]" routerLinkActive="router-link-active" >See more</a>
         <p>or</p>
-        <button class="btn btn--danger" id="reject" value="hello">Reject</button>
-        <button class="btn btn--success" id="accept">Accept</button>
+        <button class="btn btn--danger" id="reject" value="hello" (click)="handleInvitation(0)">Reject</button>
+        <button class="btn btn--success" id="accept" (click)="handleInvitation(1)">Accept</button>
 
 </div>
