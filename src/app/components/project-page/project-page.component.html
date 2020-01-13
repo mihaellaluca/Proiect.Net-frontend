@@ -25,9 +25,9 @@
     <h5 class="collaborators">Collaborators:</h5>
     <p *ngFor="let collab of collaborators">{{collab}}</p>
     <br />
-    <h5>Need more collaborators?</h5>
-    <h5>Search through our recommendations:</h5>
-    <div id="cards">
+    <h5 *ngIf="userId==project.ownerId">Need more collaborators?</h5>
+    <h5 *ngIf="userId==project.ownerId">Search through our recommendations:</h5>
+    <div id="cards" *ngIf="userId==project.ownerId">
       <app-users-suggestions *ngFor="let card of cardInfos" [card]="card"></app-users-suggestions>
   </div>
   </div>
