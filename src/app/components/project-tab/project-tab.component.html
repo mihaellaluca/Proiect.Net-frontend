@@ -9,7 +9,7 @@
              </div>
         </div>
     </div>
-    <button class="btn joinBtn" (click)=sendInvite()>Join now</button>
+    <button class="btn joinBtn" (click)=sendInvite() *ngIf="!userIsOwner">Join now</button>
     
 </div>
 <hr>

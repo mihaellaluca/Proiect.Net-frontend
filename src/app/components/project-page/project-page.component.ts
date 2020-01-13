@@ -142,6 +142,7 @@ export class ProjectPageComponent implements OnInit {
     } else {
       this.userIsOwner = false;
     }
+    console.log("UserIsOowner:", this.userIsOwner);
   }
   checkUserIsCollaborator() {
     if (this.userId in this.collaborators) {

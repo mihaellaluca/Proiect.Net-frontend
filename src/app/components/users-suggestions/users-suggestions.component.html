@@ -7,6 +7,6 @@
     <p id="knownTehnologies">Known tehnologies : <br/>{{technologies}}</p>
     <a id="seeMore" [routerLink]="['/user-profile',card.collaboratorId]" routerLinkActive="router-link-active" >See more</a>
     <p>or</p>
-    <button class="btn btn-invite" id="reject" value="hello">Invite</button>
+    <button class="btn btn-invite" id="reject" value="hello" (click)="sendInvitation()">Invite</button>
     
 </div>

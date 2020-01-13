@@ -12,9 +12,12 @@ import { GlobalService } from 'src/app/services/global-service.service';
 })
 export class ProjectTabComponent implements OnInit {
 	@Input() projectRecieved;
+	userIsOwner: boolean = false;
 	constructor(private invitationService: InvitationsService, private globalService: GlobalService) {}
 
-	ngOnInit() {}
+	ngOnInit() {
+		this.checkUserIsOwner();
+	}
 	sendInvite() {
 		console.log(this.projectRecieved);
 		let invite = new InvitationModel(
@@ -32,5 +35,15 @@ export class ProjectTabComponent implements OnInit {
 				console.error(error);
 			}
 		);
+	}
+	checkUserIsOwner(){
+		console.log("userId", localStorage.getItem('userId'), "===",this.projectRecieved.ownerId);
+		if(localStorage.getItem('userId') === this.projectRecieved.id) {
+			this.userIsOwner = true;
+			
+		}
+		else {
+			this.userIsOwner = false;
+		}
 	}
 }
