@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { GlobalService } from './global-service.service';
 import { InvitationModel } from '../models/InvitationModel';
+import { HandleInvitationModel } from '../models/HandleInvitationModel';
 
 @Injectable({
 	providedIn: 'root'
@@ -20,5 +21,13 @@ export class InvitationsService {
 			{ headers }
 		);
 		return resp;
+	}
+
+	handleInvitation(handleInvitation: HandleInvitationModel) {
+		let headers = this.globalService.headers;
+		let response = this.http.post(`${this.globalService.apiURL}/projects/handleinvitation`, handleInvitation, {
+			headers
+		});
+		return response;
 	}
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { UserService } from 'src/app/services/user-service.service';
+import { InvitationsService } from '../../services/invitations.service';
 
 @Component({
 	selector: 'app-invitation-card',
@@ -13,9 +14,10 @@ export class InvitationCardComponent implements OnInit {
 	@Input() card;
 	name: string = '';
 	technologies: string = '';
-	constructor(private userService: UserService) {}
+	constructor(private userService: UserService, private invitationService: InvitationsService) {}
 
 	ngOnInit() {
+
 		console.log(this.card);
 		this.userService.getUserById(this.card.collaboratorId).pipe().subscribe(
 			(data) => {
@@ -26,7 +28,25 @@ export class InvitationCardComponent implements OnInit {
 				});
 			},
 			(error) => {
-				console.log('plpl');
+				console.log(error);
+			}
+		);
+	}
+
+	handleInvitation(accepted) {
+		var handleInvitationModel = {
+			ProjectId: this.card.projectId,
+			CollaboratorId: this.card.collaboratorId,
+			OwnerId: this.card.ownerId,
+			Accepted: accepted
+		};
+		this.invitationService.handleInvitation(handleInvitationModel).pipe().subscribe(
+			data => {
+				console.log("Mergeeee", data);
+				window.alert("Invitation handled!");
+			},
+			error => {
+				console.error(error);
 			}
 		);
 	}
