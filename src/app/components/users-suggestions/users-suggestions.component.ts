@@ -46,6 +46,7 @@ export class UsersSuggestionsComponent implements OnInit {
     this.invitationService.joinProject(invite).pipe().subscribe(
       data => {
         console.log("Data after inviting: ", data);
+        window.alert("Your invitation has been send succesfully.");
       },
       error => {
         console.log(error);
