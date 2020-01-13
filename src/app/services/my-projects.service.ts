@@ -8,7 +8,11 @@ import { GlobalService } from './global-service.service';
 export class MyProjectsService {
 	constructor(private http: HttpClient, private globalService: GlobalService) {}
 	getMyProjects() {
-		const resp = this.http.get(`${this.globalService.apiURL}/projects/my-projects/${localStorage.getItem('userId')}`);
+		let headers = this.globalService.headers;
+		const resp = this.http.get(
+			`${this.globalService.apiURL}/projects/my-projects/${localStorage.getItem('userId')}`,
+			{ headers }
+		);
 		return resp;
 	}
 }

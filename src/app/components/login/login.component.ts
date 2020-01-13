@@ -28,8 +28,9 @@ export class LoginComponent implements OnInit {
 		}
 		this.initial.loginUser(this.loginForm.value).pipe().subscribe(
 			(data) => {
-				console.log('Data::', data.toString());
-				localStorage.setItem('userId', data.toString());
+				console.log('Data::', data['user']);
+				localStorage.setItem('jwt', data['token']['accessToken']);
+				localStorage.setItem('userId', data['user']['userId']);
 				this.router.navigate([ '' ]);
 			},
 			(error) => {

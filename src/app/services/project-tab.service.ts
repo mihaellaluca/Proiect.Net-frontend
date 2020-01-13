@@ -14,19 +14,23 @@ export class ProjectTabService {
 	constructor(private http: HttpClient, private globalService: GlobalService) {}
 	// get all projects
 	getProjects() {
+		let headers = this.globalService.headers;
 		this.projects = [];
-		this.http.get(`${this.globalService.apiURL}/projects`).pipe().subscribe(
+		this.http.get(`${this.globalService.apiURL}/projects`, { headers }).pipe().subscribe(
 			(data) => {
 				Object.keys(data).map((i) => data[i]).forEach((element) => {
-					this.http.get(`${this.globalService.apiURL}/users/${element.ownerId}`).pipe().subscribe(
-						(data) => {
-							element.ownerName = `${data['firstName']} ${data['lastName']}`;
-							this.projects.push(element);
-						},
-						(error) => {
-							console.error(error);
-						}
-					);
+					this.http
+						.get(`${this.globalService.apiURL}/users/${element.ownerId}`, { headers })
+						.pipe()
+						.subscribe(
+							(data) => {
+								element.ownerName = `${data['firstName']} ${data['lastName']}`;
+								this.projects.push(element);
+							},
+							(error) => {
+								console.error(error);
+							}
+						);
 				});
 			},
 			(error) => {
@@ -38,6 +42,7 @@ export class ProjectTabService {
 
 	// get project by id
 	getProjectById(projectId) {
-		return this.http.get(`${this.globalService.apiURL}/projects/${projectId}`);
+		let headers = this.globalService.headers;
+		return this.http.get(`${this.globalService.apiURL}/projects/${projectId}`, { headers });
 	}
 }

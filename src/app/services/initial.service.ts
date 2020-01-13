@@ -17,8 +17,6 @@ export class InitialService {
 		return this.httpClient.post(`${this.globalService.apiURL}/users`, user, { headers, responseType: 'text' });
 	}
 	loginUser(user: UserModel) {
-		localStorage.setItem("jwt", "uniqueId");
-		localStorage.setItem("time", "120");
 		console.log('USER: ', user);
 		return this.httpClient.post(`${this.globalService.apiURL}/Users/login`, user);
 	}

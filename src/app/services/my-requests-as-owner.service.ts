@@ -8,7 +8,10 @@ import { GlobalService } from './global-service.service';
 export class MyRequestsAsOwnerService {
 	constructor(private http: HttpClient, private globalService: GlobalService) {}
 	getMyRequestsAsOwner() {
-		const resp = this.http.get(`${this.globalService.apiURL}/projects/requests/${localStorage.getItem('userId')}`);
+		let headers = this.globalService.headers;
+		const resp = this.http.get(`${this.globalService.apiURL}/projects/requests/${localStorage.getItem('userId')}`, {
+			headers
+		});
 		return resp;
 	}
 }
